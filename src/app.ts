@@ -7,7 +7,7 @@ import { userRouter } from "./user/user.routes";
 const app = express();
 app.use(express.json())
 app.use(pino());
-app.use(userRouter);
+app.use("/user", userRouter);
 
 const port = config.get<string>("port");
 
