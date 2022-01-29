@@ -1,6 +1,7 @@
 import "reflect-metadata";
-import { createConnection } from "typeorm";
+import { Connection, createConnection } from "typeorm";
 import { User } from "src/user/entity/user";
+import logger from "../utils/logger";
 import config from "config";
 
 interface DatabaseConfigType {
@@ -11,18 +12,26 @@ interface DatabaseConfigType {
   database: string;
 }
 
-const postgresConfig = config.get<DatabaseConfigType>("postgres");
+export const connectToDatabase = async (): Promise<Connection> => {
+  const dbConfig = config.get<DatabaseConfigType>("postgres");
 
-export default createConnection({
-  type: "postgres",
-  host: postgresConfig.host,
-  port: postgresConfig.port,
-  username: postgresConfig.username,
-  password: postgresConfig.password,
-  database: postgresConfig.database,
-  synchronize: true,
-  logging: false,
-  entities: [User],
-  migrations: ["src/user/migration/**/*.ts"],
-  subscribers: ["src/subscriber/**/*.ts"],
-});
+  try {
+    return await createConnection({
+      type: "postgres",
+      host: dbConfig.host,
+      port: dbConfig.port,
+      username: dbConfig.username,
+      password: dbConfig.password,
+      database: dbConfig.database,
+      synchronize: true,
+      logging: false,
+      entities: [User],
+      migrations: ["src/user/migration/**/*.ts"],
+      subscribers: ["src/subscriber/**/*.ts"],
+    });
+    
+  } catch (error) {
+    logger.error(error, "Error creating a database connection");
+    process.exit(1);
+  }
+};

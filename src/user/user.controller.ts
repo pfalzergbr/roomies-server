@@ -1,5 +1,5 @@
-import { Request, Response, } from "express";
+import { Request, Response } from "express";
 
-export const userRouteCheck = (req: Request, res: Response) => {
+export const userRouteCheck = async (req: Request, res: Response) => {
   res.status(200).send();
-}
+};
