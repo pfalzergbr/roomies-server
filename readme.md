@@ -1,0 +1,1 @@
+REST API for supporting our upcoming React Native application for managing households and shared living spaces. 
