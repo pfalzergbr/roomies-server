@@ -11,11 +11,11 @@ services:
     ports: 
       - '5432:5432'
   server: 
-    image: roomies-backend
+    image: pfalzer/roomies-backend
     depends_on:
       - db
     volumes:
       - /app/node_modules
       - .:/app
     ports: 
-      - 5000:5000
+      - 8080:8080
