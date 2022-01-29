@@ -7,7 +7,7 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
     volumes: 
-      - /Users/gaborpfalzer/databases/pgdata:/var/lib/postgresql/data
+      - /var/folders/databases/pgdata:/var/lib/postgresql/data
     ports: 
       - '5432:5432'
   server: 
