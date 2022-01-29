@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { Connection, createConnection } from "typeorm";
-import { User } from "src/user/entity/user";
+import { User } from "../user/entity/user";
 import logger from "../utils/logger";
 import config from "config";
 
@@ -29,7 +29,7 @@ export const connectToDatabase = async (): Promise<Connection> => {
       migrations: ["src/user/migration/**/*.ts"],
       subscribers: ["src/subscriber/**/*.ts"],
     });
-    
+
   } catch (error) {
     logger.error(error, "Error creating a database connection");
     process.exit(1);

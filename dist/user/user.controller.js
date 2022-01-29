@@ -1,8 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.userRouteCheck = void 0;
-const userRouteCheck = (req, res) => {
-    res.status(200).send();
-};
-exports.userRouteCheck = userRouteCheck;
+exports.UserController = void 0;
+class UserController {
+    constructor(repositoryLoader) {
+        this.repositoryLoader = repositoryLoader;
+    }
+    async userRouterCheck(req, res) {
+        res.status(200).send();
+    }
+}
+exports.UserController = UserController;
 //# sourceMappingURL=user.controller.js.map
