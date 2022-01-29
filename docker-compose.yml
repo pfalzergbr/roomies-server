@@ -7,11 +7,11 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
     volumes: 
-      - /databases/pgdata:/var/lib/postgresql/data
+      - /Users/gaborpfalzer/databases/pgdata:/var/lib/postgresql/data
     ports: 
       - '5432:5432'
   server: 
-    image: pfalzer/roomies-backend
+    image: pfalzer/roomies-api:latest
     depends_on:
       - db
     volumes:

@@ -1,5 +1,5 @@
 {
-  "name": "roomies-backend",
+  "name": "roomies-api",
   "version": "1.0.0",
   "description": "Backend service for the household management mobile application in the works.",
   "main": "app.ts",
