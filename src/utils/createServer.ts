@@ -1,5 +1,5 @@
 import express from "express";
-import { userRouter } from "../user/user.routes";
+import { userRouter } from "../services/user/user.routes";
 
 export const createServer = () => {
   const app = express();
