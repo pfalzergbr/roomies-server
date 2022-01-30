@@ -5,7 +5,7 @@ import { createServer } from "./utils/createServer";
 
 const port = config.get<string>("port");
 
-connectToDatabase();
+connectToDatabase().then();
 const app = createServer();
 
 app.listen(port, () => {
