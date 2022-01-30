@@ -5,11 +5,9 @@ import { createApp } from "./utils/server";
 
 const port = config.get<string>("port");
 
-connectToDatabase().then((connection) => {
-  const app = createApp(connection);
+connectToDatabase();
+const app = createApp();
 
-
-  app.listen(port, () => {
-    logger.info(`App is running on port ${port}`);
-  });
+app.listen(port, () => {
+  logger.info(`App is running on port ${port}`);
 });
