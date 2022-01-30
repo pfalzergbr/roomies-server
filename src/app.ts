@@ -1,12 +1,12 @@
 import config from "config";
-import { connectToDatabase } from "./database/connection";
+import { connectToDatabase } from "./utils/connectToDatabase";
 import logger from "./utils/logger";
-import { createApp } from "./utils/server";
+import { createServer } from "./utils/createServer";
 
 const port = config.get<string>("port");
 
 connectToDatabase();
-const app = createApp();
+const app = createServer();
 
 app.listen(port, () => {
   logger.info(`App is running on port ${port}`);

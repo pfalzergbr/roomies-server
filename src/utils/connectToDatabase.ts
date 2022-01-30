@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import { Connection, createConnection } from "typeorm";
 import { User } from "../user/entity/user";
-import logger from "../utils/logger";
+import logger from "./logger";
 import config from "config";
 
 interface DatabaseConfigType {

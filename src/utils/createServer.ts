@@ -1,7 +1,7 @@
 import express from "express";
 import { userRoutes } from "../user/user.routes";
 
-export const createApp = () => {
+export const createServer = () => {
   const app = express();
   // Middleware Setups
   app.use(express.json());
