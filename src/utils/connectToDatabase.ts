@@ -26,7 +26,7 @@ export const connectToDatabase = async (): Promise<Connection> => {
       synchronize: true,
       logging: false,
       entities: [User],
-      migrations: ["src/user/migration/**/*.ts"],
+      migrations: ["src/migration/**/*.ts"],
       subscribers: ["src/subscriber/**/*.ts"],
     });
 
