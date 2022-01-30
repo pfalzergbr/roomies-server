@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { Connection, createConnection } from "typeorm";
-import { User } from "../services/user/entity/User";
+import { User } from "../entity/User";
 import logger from "./logger";
 import config from "config";
 
