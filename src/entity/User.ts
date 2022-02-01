@@ -11,9 +11,9 @@ export class User {
   @Column()
   email: string;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: "created_at"})
   createdAt: string;
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ name: "updated_at"})
   updatedAt: string;
 }

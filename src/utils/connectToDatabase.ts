@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import { Connection, createConnection } from "typeorm";
 import { User } from "../entity/User";
+import { Home } from "src/entity/Home";
 import logger from "./logger";
 import config from "config";
 
@@ -25,9 +26,9 @@ export const connectToDatabase = async (): Promise<Connection> => {
       database: dbConfig.database,
       synchronize: true,
       logging: false,
-      entities: [User],
-      migrations: ["src/migration/**/*.ts"],
-      subscribers: ["src/subscriber/**/*.ts"],
+      entities: [User, Home],
+      // migrations: ["src/migration/**/*.ts"],
+      // subscribers: ["src/subscriber/**/*.ts"],
     });
 
   } catch (error) {
