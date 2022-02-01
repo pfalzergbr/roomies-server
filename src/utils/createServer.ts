@@ -1,5 +1,5 @@
 import express from "express";
-import { homeRouter } from "src/routes/home.routes";
+import { homeRouter } from "../routes/home.routes";
 import { userRouter } from "../routes/user.routes";
 
 export const createServer = () => {

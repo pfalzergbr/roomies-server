@@ -6,7 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.connectToDatabase = void 0;
 require("reflect-metadata");
 const typeorm_1 = require("typeorm");
-const user_1 = require("../user/entity/user");
+const User_1 = require("../entity/User");
+const Home_1 = require("../entity/Home");
 const logger_1 = __importDefault(require("./logger"));
 const config_1 = __importDefault(require("config"));
 const connectToDatabase = async () => {
@@ -21,9 +22,9 @@ const connectToDatabase = async () => {
             database: dbConfig.database,
             synchronize: true,
             logging: false,
-            entities: [user_1.User],
-            migrations: ["src/migration/**/*.ts"],
-            subscribers: ["src/subscriber/**/*.ts"],
+            entities: [User_1.User, Home_1.Home],
+            // migrations: ["src/migration/**/*.ts"],
+            // subscribers: ["src/subscriber/**/*.ts"],
         });
     }
     catch (error) {
